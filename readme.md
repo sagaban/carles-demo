@@ -10,6 +10,13 @@ Example app working with react
 
 ## 1. Star creating a React app with Vite and Typescript
 
+### Alternatives
+
+- Angular
+- Vue
+- Svelte
+- SolidJS
+
 `npm create vite@latest carles-demo -- --template react-ts`
 `npm install`
 `npm run dev`
@@ -19,3 +26,23 @@ Example app working with react
 `npm install --save-dev eslint-plugin-react-x`
 `npm install --save-dev eslint-plugin-react-dom`
 `npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier`
+
+## 3. Install MUI
+
+### Alternatives
+
+- [shadcn](https://ui.shadcn.com/)
+- [DaisyUI](https://daisyui.com/)
+- [Ant Design](https://ant.design/)
+- [Chakra UI](https://chakra-ui.com/)
+- [Shadow Panda](https://shadow-panda.dev/)
+
+[instructions](https://mui.com/material-ui/getting-started/installation/)
+
+`npm install @mui/material @emotion/react @emotion/styled`
+`npm install @mui/icons-material`
+`npm i --save-dev @types/node`
+
+### Add a template as example
+
+> Source: https://mui.com/material-ui/getting-started/templates/
