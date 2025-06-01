@@ -13,3 +13,9 @@ Example app working with react
 `npm create vite@latest carles-demo -- --template react-ts`
 `npm install`
 `npm run dev`
+
+## 2. Add linters
+
+`npm install --save-dev eslint-plugin-react-x`
+`npm install --save-dev eslint-plugin-react-dom`
+`npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier`
