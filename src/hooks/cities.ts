@@ -22,7 +22,7 @@ export const useCities = () => {
 
 export const useCityDetails = (cityId: number | undefined) => {
   return useQuery({
-    queryKey: ['cityDetails'],
+    queryKey: ['cityDetails', cityId],
     queryFn: () => {
       // This would be the real call to the backend
       //ApiService.get(`/cities/${cityId}`).then((res) => res.data as CityDetails),
