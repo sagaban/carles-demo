@@ -13,6 +13,7 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ColorModeIconDropdown from '../theme/ColorModeIconDropdown';
 import Sitemark from './SitemarkIcon';
 import { useState } from 'react';
+import { NavLink } from 'react-router';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
@@ -53,8 +54,8 @@ export default function AppAppBar() {
           <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
             <Sitemark />
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-              <Button variant="text" color="info" size="small">
-                Features
+              <Button component={NavLink} to="/concerts" variant="text" color="info" size="small">
+                Concerts
               </Button>
               <Button variant="text" color="info" size="small">
                 Testimonials
@@ -65,8 +66,15 @@ export default function AppAppBar() {
               <Button variant="text" color="info" size="small">
                 Pricing
               </Button>
-              <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
-                FAQ
+              <Button
+                component={NavLink}
+                to="/about"
+                variant="text"
+                color="info"
+                size="small"
+                sx={{ minWidth: 0 }}
+              >
+                About
               </Button>
               <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
                 Blog
@@ -80,10 +88,16 @@ export default function AppAppBar() {
               alignItems: 'center',
             }}
           >
-            <Button color="primary" variant="text" size="small">
+            <Button component={NavLink} to="/login" color="primary" variant="text" size="small">
               Sign in
             </Button>
-            <Button color="primary" variant="contained" size="small">
+            <Button
+              component={NavLink}
+              to="/register"
+              color="primary"
+              variant="contained"
+              size="small"
+            >
               Sign up
             </Button>
             <ColorModeIconDropdown />
@@ -97,9 +111,11 @@ export default function AppAppBar() {
               anchor="top"
               open={open}
               onClose={toggleDrawer(false)}
-              PaperProps={{
-                sx: {
-                  top: 'var(--template-frame-height, 0px)',
+              slotProps={{
+                paper: {
+                  sx: {
+                    top: 'var(--template-frame-height, 0px)',
+                  },
                 },
               }}
             >
@@ -115,20 +131,36 @@ export default function AppAppBar() {
                   </IconButton>
                 </Box>
 
-                <MenuItem>Features</MenuItem>
+                <MenuItem component={NavLink} to="/concerts">
+                  Concerts
+                </MenuItem>
                 <MenuItem>Testimonials</MenuItem>
                 <MenuItem>Highlights</MenuItem>
                 <MenuItem>Pricing</MenuItem>
-                <MenuItem>FAQ</MenuItem>
+                <MenuItem component={NavLink} to="/about">
+                  About
+                </MenuItem>
                 <MenuItem>Blog</MenuItem>
                 <Divider sx={{ my: 3 }} />
                 <MenuItem>
-                  <Button color="primary" variant="contained" fullWidth>
+                  <Button
+                    component={NavLink}
+                    to="/register"
+                    color="primary"
+                    variant="contained"
+                    fullWidth
+                  >
                     Sign up
                   </Button>
                 </MenuItem>
                 <MenuItem>
-                  <Button color="primary" variant="outlined" fullWidth>
+                  <Button
+                    component={NavLink}
+                    to="/login"
+                    color="primary"
+                    variant="outlined"
+                    fullWidth
+                  >
                     Sign in
                   </Button>
                 </MenuItem>

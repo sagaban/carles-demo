@@ -18,13 +18,17 @@ Example app working with react
 - SolidJS
 
 `npm create vite@latest carles-demo -- --template react-ts`
+
 `npm install`
+
 `npm run dev`
 
 ## 2. Add linters
 
 `npm install --save-dev eslint-plugin-react-x`
+
 `npm install --save-dev eslint-plugin-react-dom`
+
 `npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier`
 
 ## 3. Install MUI
@@ -40,9 +44,28 @@ Example app working with react
 [instructions](https://mui.com/material-ui/getting-started/installation/)
 
 `npm install @mui/material @emotion/react @emotion/styled`
+
 `npm install @mui/icons-material`
+
 `npm i --save-dev @types/node`
 
 ### Add a template as example
 
 > Source: https://mui.com/material-ui/getting-started/templates/
+
+## 4. React router
+
+### Alternatives
+
+- [TanStack Router](https://tanstack.com/router)
+
+[instructions for declarative routing](https://reactrouter.com/start/declarative/installation/)
+
+`npm install --save react-router`
+
+Here, as an example, I added:
+
+- Basic routing
+- Routes with a layout
+- Nested routes
+- Routes with URL params

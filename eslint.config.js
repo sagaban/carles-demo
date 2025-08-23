@@ -37,6 +37,7 @@ export default tseslint.config(
       ...reactX.configs['recommended-typescript'].rules,
       ...reactDom.configs.recommended.rules,
       'prettier/prettier': 'error',
+      '@typescript-eslint/restrict-template-expressions': 'off',
     },
   }
 );
