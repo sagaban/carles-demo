@@ -8,8 +8,8 @@ import {
   Button,
 } from '@mui/material';
 import { NavLink, useParams } from 'react-router';
-import { useCityDetails } from '../../hooks/cities';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useCityDetails } from 'hooks/cities';
 
 export default function City() {
   const { city } = useParams();

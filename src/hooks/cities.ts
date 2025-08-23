@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-// import { ApiService } from '../services/api';
-import type { City, CityDetails } from '../types/cities';
-import { cities, citiesDetails } from '../mocks/city';
+// import { ApiService } from 'services/api';
+import type { City, CityDetails } from 'types/cities';
+import { cities, citiesDetails } from 'mocks/city';
 
 export const useCities = () => {
   return useQuery({

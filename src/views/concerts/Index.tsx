@@ -1,6 +1,6 @@
 import { Button, CircularProgress, Container, Stack, Typography } from '@mui/material';
 import { NavLink } from 'react-router';
-import { useCities } from '../../hooks/cities';
+import { useCities } from 'hooks/cities';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export default function ConcertsHome() {
