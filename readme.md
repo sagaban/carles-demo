@@ -69,3 +69,15 @@ Here, as an example, I added:
 - Routes with a layout
 - Nested routes
 - Routes with URL params
+
+## 5. TanStack Router (aka React Query)
+
+`npm install --save @tanstack/react-query`
+
+`npm install --save axios`
+
+Things added:
+
+- Restructure index components and routes
+- Add api service, hooks and mocks
+- Simulate an api all using TanStack query
