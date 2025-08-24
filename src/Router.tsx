@@ -7,12 +7,14 @@ import ConcertsHome from './views/concerts/Index';
 import City from './views/concerts/[city]';
 import Trending from './views/concerts/Trending';
 import { IndexPage } from './views/Index';
+import FormDemo from 'views/FormDemo';
 
 export default function Router() {
   return (
     <Routes>
       <Route index element={<IndexPage />} />
       <Route path="about" element={<AboutPage />} />
+      <Route path="form-demo" element={<FormDemo />} />
       <Route element={<AuthLayout />}>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />

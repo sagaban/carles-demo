@@ -63,8 +63,8 @@ export default function AppAppBar() {
               <Button variant="text" color="info" size="small" onClick={toggleTestimonialsModal}>
                 Testimonials
               </Button>
-              <Button variant="text" color="info" size="small">
-                Highlights
+              <Button component={NavLink} to="/form-demo" variant="text" color="info" size="small">
+                Form Demo
               </Button>
               <Button variant="text" color="info" size="small">
                 Pricing
@@ -138,7 +138,9 @@ export default function AppAppBar() {
                   Concerts
                 </MenuItem>
                 <MenuItem onClick={toggleTestimonialsModal}>Testimonials</MenuItem>
-                <MenuItem>Highlights</MenuItem>
+                <MenuItem component={NavLink} to="/form-demo">
+                  Form Demo
+                </MenuItem>
                 <MenuItem>Pricing</MenuItem>
                 <MenuItem component={NavLink} to="/about">
                   About

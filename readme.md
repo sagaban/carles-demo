@@ -98,3 +98,22 @@ Things added:
 
 - The `Testimonials` sections is now a modal
 - Use Zustand to toggle the modal open/close
+
+## 7. Add React Hook Form
+
+### Alternatives
+
+- [Formik](https://formik.org/)
+
+[instructions](https://react-hook-form.com/get-started)
+
+`npm install --save react-hook-form`
+
+`npm install --save @hookform/resolvers yu`
+
+Things added:
+
+- A new page that uses 'React Hook Form'
+- React Hook Form integrated with
+  - Material UI components
+  - Yup schema as form validation
