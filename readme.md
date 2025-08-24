@@ -81,3 +81,20 @@ Things added:
 - Restructure index components and routes
 - Add api service, hooks and mocks
 - Simulate an api all using TanStack query
+
+## 6. Add Zustand for State management
+
+### Alternatives
+
+[React's native context](https://react.dev/learn/managing-state)
+[Jotai](https://jotai.org/)
+[Redux](https://redux.js.org/)
+
+[instructions](https://zustand.docs.pmnd.rs/getting-started/introduction/)
+
+`npm install --save zustand`
+
+Things added:
+
+- The `Testimonials` sections is now a modal
+- Use Zustand to toggle the modal open/close

@@ -14,6 +14,7 @@ import ColorModeIconDropdown from 'theme/ColorModeIconDropdown';
 import Sitemark from './SitemarkIcon';
 import { useState } from 'react';
 import { NavLink } from 'react-router';
+import { useAppStore } from 'hooks/store';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
@@ -38,6 +39,8 @@ export default function AppAppBar() {
     setOpen(newOpen);
   };
 
+  const { toggleTestimonialsModal } = useAppStore();
+
   return (
     <AppBar
       position="fixed"
@@ -57,7 +60,7 @@ export default function AppAppBar() {
               <Button component={NavLink} to="/concerts" variant="text" color="info" size="small">
                 Concerts
               </Button>
-              <Button variant="text" color="info" size="small">
+              <Button variant="text" color="info" size="small" onClick={toggleTestimonialsModal}>
                 Testimonials
               </Button>
               <Button variant="text" color="info" size="small">
@@ -134,7 +137,7 @@ export default function AppAppBar() {
                 <MenuItem component={NavLink} to="/concerts">
                   Concerts
                 </MenuItem>
-                <MenuItem>Testimonials</MenuItem>
+                <MenuItem onClick={toggleTestimonialsModal}>Testimonials</MenuItem>
                 <MenuItem>Highlights</MenuItem>
                 <MenuItem>Pricing</MenuItem>
                 <MenuItem component={NavLink} to="/about">

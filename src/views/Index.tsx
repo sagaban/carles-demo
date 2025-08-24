@@ -5,7 +5,7 @@ import LogoCollection from 'components/LogoCollection';
 import Highlights from 'components/Highlights';
 import Pricing from 'components/Pricing';
 import Features from 'components/Features';
-import Testimonials from 'components/Testimonials';
+import TestimonialsModal from 'components/TestimonialsModal';
 import FAQ from 'components/FAQ';
 import Footer from 'components/Footer';
 
@@ -18,7 +18,6 @@ export const IndexPage = () => {
         <LogoCollection />
         <Features />
         <Divider />
-        <Testimonials />
         <Divider />
         <Highlights />
         <Divider />
@@ -28,6 +27,7 @@ export const IndexPage = () => {
         <Divider />
         <Footer />
       </div>
+      <TestimonialsModal />
     </>
   );
 };
