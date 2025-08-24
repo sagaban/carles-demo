@@ -8,6 +8,7 @@ import City from './views/concerts/[city]';
 import Trending from './views/concerts/Trending';
 import { IndexPage } from './views/Index';
 import FormDemo from 'views/FormDemo';
+import { ProtectedRoute } from './layouts/ProtectedRoute';
 
 export default function Router() {
   return (
@@ -20,7 +21,7 @@ export default function Router() {
         <Route path="register" element={<Register />} />
       </Route>
 
-      <Route path="concerts">
+      <Route path="concerts" element={<ProtectedRoute />}>
         <Route index element={<ConcertsHome />} />
         <Route path=":city" element={<City />} />
         <Route path="trending" element={<Trending />} />

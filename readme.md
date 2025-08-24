@@ -117,3 +117,10 @@ Things added:
 - React Hook Form integrated with
   - Material UI components
   - Yup schema as form validation
+
+## 8. Add authentication
+
+Based on the following examples:
+
+- https://github.dev/sanjay-arya/react-auth-demo
+- https://github.dev/ederssouza/reactjs-auth-boilerplate

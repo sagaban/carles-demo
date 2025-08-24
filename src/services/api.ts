@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getToken } from 'utils/authCookies';
 
 export const ApiService = axios.create({
   baseURL: 'http://localhost:8080',
@@ -6,15 +7,13 @@ export const ApiService = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  // withCredentials: true, // -> When authentication is implemented
+  withCredentials: true, // -> When authentication is implemented
+});
 
-  // This is the way you later can add a interceptor to the api service
-
-  // ApiService.interceptors.request.use((config) => {
-  //   const token = localStorage.getItem('token');
-  //   if (token) {
-  //     config.headers.Authorization = `Bearer ${token}`;
-  //   }
-  //   return config;
-  // });
+ApiService.interceptors.request.use((config) => {
+  const token = getToken();
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
 });

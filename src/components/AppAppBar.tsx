@@ -15,6 +15,8 @@ import Sitemark from './SitemarkIcon';
 import { useState } from 'react';
 import { NavLink } from 'react-router';
 import { useAppStore } from 'hooks/store';
+import useSession from 'hooks/useSession';
+import { Typography } from '@mui/material';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
@@ -34,6 +36,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 
 export default function AppAppBar() {
   const [open, setOpen] = useState(false);
+  const { isAuthenticated, signOut, user } = useSession();
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -57,9 +60,11 @@ export default function AppAppBar() {
           <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
             <Sitemark />
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-              <Button component={NavLink} to="/concerts" variant="text" color="info" size="small">
-                Concerts
-              </Button>
+              {isAuthenticated && (
+                <Button component={NavLink} to="/concerts" variant="text" color="info" size="small">
+                  Concerts
+                </Button>
+              )}
               <Button variant="text" color="info" size="small" onClick={toggleTestimonialsModal}>
                 Testimonials
               </Button>
@@ -91,18 +96,32 @@ export default function AppAppBar() {
               alignItems: 'center',
             }}
           >
-            <Button component={NavLink} to="/login" color="primary" variant="text" size="small">
-              Sign in
-            </Button>
-            <Button
-              component={NavLink}
-              to="/register"
-              color="primary"
-              variant="contained"
-              size="small"
-            >
-              Sign up
-            </Button>
+            {isAuthenticated ? (
+              <>
+                <Typography variant="body1" color="text.secondary">
+                  {user?.name}
+                </Typography>
+                <Button onClick={signOut} color="primary" variant="text" size="small">
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button component={NavLink} to="/login" color="primary" variant="text" size="small">
+                  Sign in
+                </Button>
+                <Button
+                  component={NavLink}
+                  to="/register"
+                  color="primary"
+                  variant="contained"
+                  size="small"
+                >
+                  Sign up
+                </Button>
+              </>
+            )}
+
             <ColorModeIconDropdown />
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1 }}>
